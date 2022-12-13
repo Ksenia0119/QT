@@ -1,8 +1,9 @@
 // Защита от повторного включения
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include "ClassResist.h"
 #include <QMainWindow>
+#include <stdexcept>
 
 // Определение UI-класса наперёд, чтобы визуальное редактирование не приводило
 // к крупным перекомпиляциям
@@ -25,11 +26,16 @@ public:
 private slots:
     void on_pushButton_Calc_clicked();
 
+    void on_action_triggered();
+
+    void on_action_1_triggered();
+
 private:
      // Указатель на UI (для него в Qt есть ещё одна программа, UIC)
     Ui::MainWindow *ui;
       // Поля
-    float r1,r2,r3;
+   //float r1,r2,r3;
+   Resist r;
 };
 // Защита от повторного включения
 #endif // MAINWINDOW_H
